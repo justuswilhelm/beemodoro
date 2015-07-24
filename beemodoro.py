@@ -10,17 +10,20 @@ from time import sleep
 
 POMODORO_LENGTH = 25 * 60
 BREAK_LENGTH = 5 * 60
-messages = {
-    'POMODORO_START': 'Pomodoro has started',
-    'POMODORO_OVER': 'Pomodoro Over',
-    'BREAK_START': 'Start your break',
-    'BREAK_OVER': 'Break Over',
-    'TRANSFERRING': 'Transferring data to the Mothership',
-}
+
 BEEMINDER_KEY = environ['BEEMINDER_KEY']
 MASHAPE_KEY = environ['MASHAPE_KEY']
 USER = environ['BEEMINDER_USER']
 GOAL = environ['BEEMINDER_GOAL']
+
+messages = {
+    'pomodoro_start': 'Pomodoro has started.',
+    'pomodoro_over': 'Pomodoro over.',
+    'break_start': 'Take a break, {}.'.format(USER),
+    'break_over': 'Break over.',
+    'transferring': 'Transferring data to Beeminder.',
+    'time_remaining': 'Time Remaining.',
+}
 
 
 def say_print(message_id):
@@ -45,7 +48,9 @@ def timer(length):
         seconds = i % 60
         print("\r", end='')
         print(
-            "Time remaining: {:02}:{:02}".format(minutes, seconds),
+            "{}: {:02}:{:02}".format(
+                messages['time_remaining'],
+                minutes, seconds),
             end='',
             flush=True)
         sleep(1)
@@ -53,16 +58,16 @@ def timer(length):
 
 
 def pomodoro(activity, length=POMODORO_LENGTH):
-    say_print('POMODORO_START')
+    say_print('pomodoro_start')
     timer(length)
-    say_print('POMODORO_OVER')
+    say_print('pomodoro_over')
 
-    say_print('TRANSFERRING')
+    say_print('transferring')
     send_data(activity)
 
-    say_print('BREAK_START')
+    say_print('break_start')
     timer(BREAK_LENGTH)
-    say_print('BREAK_OVER')
+    say_print('break_over')
 
 if __name__ == "__main__":
     assert len(argv) >= 2
