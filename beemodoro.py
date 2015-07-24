@@ -15,6 +15,7 @@ messages = {
     'POMODORO_OVER': 'Pomodoro Over',
     'BREAK_START': 'Start your break',
     'BREAK_OVER': 'Break Over',
+    'TRANSFERRING': 'Transferring data to the Mothership',
 }
 BEEMINDER_KEY = environ['BEEMINDER_KEY']
 MASHAPE_KEY = environ['MASHAPE_KEY']
@@ -56,6 +57,7 @@ def pomodoro(activity, length=POMODORO_LENGTH):
     timer(length)
     say_print('POMODORO_OVER')
 
+    say_print('TRANSFERRING')
     send_data(activity)
 
     say_print('BREAK_START')
