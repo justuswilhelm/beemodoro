@@ -22,7 +22,7 @@ messages = {
     'break_start': 'Take a break, {}.'.format(USER),
     'break_over': 'Break over.',
     'transferring': 'Transferring data to Beeminder.',
-    'time_remaining': 'Time Remaining.',
+    'time_remaining': 'Time Remaining',
 }
 
 
