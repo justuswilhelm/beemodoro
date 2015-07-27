@@ -1,12 +1,12 @@
 # Beeminder + Pomodoro = ❤️
 
 Utilize the power of [Beeminder](http://beeminder.com/) and
-[Pomodoro](http://pomodorotechnique.com). Runs a Pomodoro timer in your terminal
+[Pomodoro](http://pomodorotechnique.com). This little script runs a Pomodoro timer in your terminal
 and increments your Beeminder goal counter when it's done.
 
 ## Quick start
 
-1. Set the following environment variables:
+1. Set the following environment variables (using `foreman`, `export`, ...):
   + `BEEMINDER_KEY` ... your Beeminder API key
   + `MASHAPE_KEY` ... your Mashape API consumer key
   + `BEEMINDER_USER` ... your Beeminder username
