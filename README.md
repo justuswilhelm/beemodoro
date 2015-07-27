@@ -2,7 +2,7 @@
 
 Utilize the power of [Beeminder](http://beeminder.com/) and
 [Pomodoro](http://pomodorotechnique.com). Runs a Pomodoro timer in your terminal
-and sends a 1 to your Beeminder goal.
+and increments your Beeminder goal counter when it's done.
 
 ## Quick start
 
