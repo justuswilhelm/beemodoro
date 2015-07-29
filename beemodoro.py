@@ -34,12 +34,13 @@ def say_print(message_id):
     p.start()
 
 
-def send_data(activity):
-    post('https://dreeves-beeminder.p.mashape.com/users/{user}/goals/{goal}/'
-         'datapoints.json?auth_token={beeminder_key}&username={user}'.format(
-             user=USER, goal=GOAL, beeminder_key=BEEMINDER_KEY),
-         headers={'X-Mashape-Key': MASHAPE_KEY},
-         data={'comment': activity, 'value': '1', 'sendmail': 'false'})
+def send_data(activity, goal=GOAL):
+    return post(
+        'https://dreeves-beeminder.p.mashape.com/users/{user}/goals/{goal}/'
+        'datapoints.json?auth_token={beeminder_key}&username={user}'.format(
+            user=USER, goal=goal, beeminder_key=BEEMINDER_KEY),
+        headers={'X-Mashape-Key': MASHAPE_KEY},
+        data={'comment': activity, 'value': '1', 'sendmail': 'false'})
 
 
 def timer(length):
