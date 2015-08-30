@@ -70,7 +70,8 @@ def pomodoro(activity, length=POMODORO_LENGTH):
     timer(BREAK_LENGTH)
     say_print('break_over')
 
-if __name__ == "__main__":
+
+def main():
     assert len(argv) >= 2
     msg = argv[1]
     if len(argv) == 3:
@@ -79,3 +80,7 @@ if __name__ == "__main__":
         length = POMODORO_LENGTH
 
     pomodoro(msg, length=length)
+
+
+if __name__ == "__main__":
+    main()
