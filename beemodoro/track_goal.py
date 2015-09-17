@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from sys import argv
 
-from beemodoro import send_data
+from beemodoro.beemodoro import send_data
 
 def main():
     goal = argv[1]

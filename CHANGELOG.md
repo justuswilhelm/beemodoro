@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.1.1] - 2015-09-17
+
+### Fixed
+
+- Use the correct import path in track_goal
+
 ## [1.1.0] - 2015-08-30
 
 ### Fixed
