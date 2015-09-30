@@ -1,3 +1,4 @@
+from beemodoro import __version__
 from setuptools import setup
 
 setup(
@@ -6,7 +7,7 @@ setup(
     description='Beeminder Pomodoro Timer',
     entry_points={
         'console_scripts': [
-            'beemodoro = beemodoro.beemodoro:main',
+            'beemodoro = beemodoro:main',
             'track_goal = beemodoro.track_goal:main',
         ],
     },
@@ -15,7 +16,7 @@ setup(
     name='beemodoro',
     packages=['beemodoro'],
     url='https://github.com/justuswilhelm/beemodoro',
-    version='1.0.0',
+    version=__version__,
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3.3',
