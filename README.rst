@@ -1,10 +1,12 @@
-# Beeminder + Pomodoro = ❤️
+Beeminder + Pomodoro = ❤️
+========================
 
 Utilize the power of [Beeminder](http://beeminder.com/) and
 [Pomodoro](http://pomodorotechnique.com). This little script runs a Pomodoro timer in your terminal
 and increments your Beeminder goal counter when it's done.
 
-## Quick start
+Quick start
+-----------
 
 1. Set the following environment variables (using `foreman`, `export`, ...):
   + `BEEMINDER_KEY` ... your Beeminder API key
@@ -16,6 +18,7 @@ and increments your Beeminder goal counter when it's done.
 4. You just finished a Pomodoro
 
 ## Requirements
+---------------
 
 + Python 3
 + OS X say (sry everyone else!)
