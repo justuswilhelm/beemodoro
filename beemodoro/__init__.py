@@ -37,10 +37,10 @@ def say_print(message_id):
     p.start()
 
 
-def send_data(activity, goal=GOAL):
+def send_data(activity=""):
     response = post(
         BEEMINDER_POST_ENDPOINT,
-        data={'comment': activity, 'value': '1', 'sendmail': 'false'})
+        data={'comment': activity, 'value': '1'})
     assert response.status_code < 400, response.text
     return response
 
