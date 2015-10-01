@@ -7,15 +7,19 @@ from sys import argv
 from requests import post
 from time import sleep
 
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 
 POMODORO_LENGTH = 25 * 60
 BREAK_LENGTH = 5 * 60
 
 BEEMINDER_KEY = environ['BEEMINDER_KEY']
-MASHAPE_KEY = environ['MASHAPE_KEY']
 USER = environ['BEEMINDER_USER']
 GOAL = environ['BEEMINDER_GOAL']
+
+BEEMINDER_API_ENDPOINT = "https://www.beeminder.com/api/v1/{}"
+BEEMINDER_POST_ENDPOINT = BEEMINDER_API_ENDPOINT.format(
+    "/users/{USER}/goals/{GOAL}/datapoints.json?"
+    "auth_token={BEEMINDER_KEY}".format(**locals()))
 
 messages = {
     'pomodoro_start': 'Pomodoro has started.',
@@ -23,8 +27,7 @@ messages = {
     'break_start': 'Take a break, {}.'.format(USER),
     'break_over': 'Break over.',
     'transferring': 'Transferring data to Beeminder.',
-    'time_remaining': 'Time Remaining',
-}
+    'time_remaining': 'Time Remaining'}
 
 
 def say_print(message_id):
@@ -36,10 +39,7 @@ def say_print(message_id):
 
 def send_data(activity, goal=GOAL):
     response = post(
-        'https://dreeves-beeminder.p.mashape.com/users/{user}/goals/{goal}/'
-        'datapoints.json?auth_token={beeminder_key}&username={user}'.format(
-            user=USER, goal=goal, beeminder_key=BEEMINDER_KEY),
-        headers={'X-Mashape-Key': MASHAPE_KEY},
+        BEEMINDER_POST_ENDPOINT,
         data={'comment': activity, 'value': '1', 'sendmail': 'false'})
     assert response.status_code < 400, response.text
     return response
