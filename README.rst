@@ -5,6 +5,10 @@ Utilize the power of `Beeminder <http://beeminder.com/>`_ and `Pomodoro
 your terminal and increments your Beeminder goal counter when it's done. This
 requires your project to count 1 Pomodoro per step.
 
+Installation
+------------
+``pip3 install beemodoro``
+
 Quick start
 -----------
 1. Set the following environment variables (using ``foreman``, ``export``, ...):
