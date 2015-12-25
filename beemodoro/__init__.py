@@ -7,8 +7,6 @@ from sys import argv
 from requests import post
 from time import sleep
 
-__version__ = "1.2.0"
-
 POMODORO_LENGTH = 25 * 60
 BREAK_LENGTH = 5 * 60
 

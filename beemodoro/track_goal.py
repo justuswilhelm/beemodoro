@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
-from sys import argv
+from argparse import ArgumentParser
 
 from beemodoro import send_data
 
 
 def main():
-    assert len(argv) == 3
-    goal = argv[1]
-    activity = argv[2]
-
-    send_data(activity, goal=goal)
+    parser = ArgumentParser(
+        description="Transmit goal data to Beeminder")
+    parser.add_argument(
+        'activity', metavar='ACTIVITY', type=str, nargs=1,
+        help='information about the activity that you performed'
+    )
+    args = parser.parse_args()
+    send_data(args.activity)
 
 
 if __name__ == "__main__":

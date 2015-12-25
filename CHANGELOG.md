@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.3.0] - 2015-12-27
+
+### Fixed
+
+- Argparsing now works in track_goal as it's supposed to work.
+
 ## [1.2.0] - 2015-10-01
 
 ### Added
