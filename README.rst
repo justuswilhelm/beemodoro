@@ -22,6 +22,10 @@ Quick start
 3. Work for 25 minutes
 4. You just finished a Pomodoro! Yay! Take a break 🍅
 
+Manual Goal Tracking
+--------------------
+``track_goal [comment]``
+
 Requirements
 ---------------
 - Python 3
