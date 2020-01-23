@@ -10,7 +10,7 @@ setup(
             'track_goal = beemodoro.track_goal:main',
         ],
     },
-    install_requires=['requests==2.7.0'],
+    install_requires=['requests==2.20.0'],
     license='MIT',
     name='beemodoro',
     packages=['beemodoro'],
